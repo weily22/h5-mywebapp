@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <title>测试基本图文组件</title>
+  <link rel="stylesheet" href="../css/compbase.css">
+  <style>
+    body{
+      margin:0;padding:0;
+      background-color: #000;
+    }
+    .iphone{
+      width:340px;
+      height:540px;
+      background-color: #fff;
+      position: absolute;
+      left:50%;
+      top:50%;
+      margin: -270px 0 0 -170px;
+    }
+  </style>
+  <script src="../js/lib/jquery-3.1.1.min.js"></script>
+  <script src="../js/compbase.js"></script>
+</head>
+<body>
+  <div class="iphone"></div>
+  <script>
+    var cfg = {
+      type: 'base',
+      text: 'text',
+      width: 200,
+      height:200,
+      bg: './wolf.jpg',
+      css: {
+        left: 50,
+        top: 50
+      },
+      center: true
+    }
+    var h5 =  new Compbase('myName', cfg)
+    $('.iphone').append(h5)
+  </script>
+</body>
+</html>
