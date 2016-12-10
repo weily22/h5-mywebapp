@@ -15,5 +15,17 @@ var Compbase = function (name, cfg) {
       left: '50%'
     })
   }
+
+  component.on('onLoad', function () {
+    component.addClass(cls + '_load').removeClass(cls + '_leave');
+    cfg.animateIn && component.animate(cfg.animateIn)
+    return false;
+  })
+  component.on('onLeave', function () {
+    component.addClass(cls + '_leave').removeClass(cls + '_load');
+    cfg.animateOut && component.animate(cfg.animateOut)
+    return false;
+  })
+
   return component
 }

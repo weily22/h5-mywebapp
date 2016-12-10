@@ -33,13 +33,26 @@
       height:200,
       bg: './wolf.jpg',
       css: {
-        left: 50,
-        top: 50
+        bottom: 0,
+        opacity: 0
+      },
+      animateIn: {
+        bottom: 80,
+        opacity: 1
+      },
+      animateOut: {
+        bottom: 0,
+        opacity: 0
       },
       center: true
     }
     var h5 =  new Compbase('myName', cfg)
-    $('.iphone').append(h5)
+    $('.iphone').append(h5);
+    var leave = true;
+    $('body').click(function () {
+      leave = !leave;
+      $('.h5_component').trigger(leave ? 'onLeave': 'onLoad')
+    })
   </script>
 </body>
 </html>
